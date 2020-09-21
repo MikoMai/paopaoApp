@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view class="main_container">
+	<!-- wxml -->
+	<view class="img_box">
+		<swiper class='u-wrp-bnr' indicator-dots='true' autoplay='true' interval='5000' duration='1000' circular='true'>
+			<block wx:for="{{bnrUrl}}" wx:for-index="index">
+				<swiper-item>
+					<image src='{{item.url}}' class='u-img-slide' mode='aspectFill'></image>
+				</swiper-item>
+			</block>
+		</swiper>
+	</view>
+	<!--跑马灯-->
+	<view class="marquee_container" style="--marqueeWidth--:-12em">
+		<view class="marquee_view"><text class="marquee_text"> 同城跑跑</text></view>
+	</view>
+	<!--跑马灯-->
+	<view class="main">
+		<view class="do-view" style="--color--:#009999" bindtap="toPaoPao"><text class="do-view-text">同城跑跑</text></view>
+		<view class="do-view" style="--color--:#00CCCC"><text class="do-view-text">我的跑跑</text></view>
+		<view class="do-view" style="--color--:#6699CC"><text class="do-view-text">精彩资讯</text></view>
+		<view class="do-view" style="--color--:#66CC99"><text class="do-view-text">个人中心</text></view>
+	</view>
+</view>

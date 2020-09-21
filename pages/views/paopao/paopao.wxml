@@ -1,0 +1,21 @@
+<!--pages/views/paopao/paopao.wxml-->
+<view class="list">
+<template is="" data="{{array}}" />
+<block wx:for="{{array}}">
+  <view class="item" bindtap="seeDetail" id="0">
+  <view class="desc">
+  <view class="item1">
+   <view class="title">{{item.title}}</view>
+     <view class="integral">积分:{{item.integral}}</view>
+    <view class="status_10" wx:if="{{item.status == 10}}">已完成</view>
+      <view class="status_8" wx:if="{{item.status == 8}}">进行中</view>
+   </view>
+    <view class="text">
+      <view class="content">{{item.content}}</view>
+      <view class="createDate">{{item.createDate}}</view>
+    </view>
+  </view>
+</view>
+  <view class="hr2"></view>
+</block>
+</view>
