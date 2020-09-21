@@ -1,0 +1,7 @@
+ <view class='meta'>
+    <text class='title'>{{mission.title}}</text>
+  </view>
+  <view class='summary'>
+    <text class='label'>内容</text>
+    <text class='content'>{{mission.content}}</text>
+  </view>

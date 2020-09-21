@@ -4,7 +4,8 @@
     "pages/logs/logs",
     "pages/view",
     "pages/views/main/main",
-    "pages/views/paopao/paopao"
+    "pages/views/paopao/paopao",
+    "pages/views/paopao/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,14 +1,13 @@
 <!--pages/views/paopao/paopao.wxml-->
 <view class="list">
-<template is="" data="{{array}}" />
-<block wx:for="{{array}}">
-  <view class="item" bindtap="seeDetail" id="0">
+<template is="item" data="{{array}}" />
+<block wx:for="{{array}}"  wx:key="id">
+ <navigator url='/pages/views/paopao/detail?id={{item.id}}'>
+  <view class="item" >
   <view class="desc">
   <view class="item1">
    <view class="title">{{item.title}}</view>
      <view class="integral">积分:{{item.integral}}</view>
-    <view class="status_10" wx:if="{{item.status == 10}}">已完成</view>
-      <view class="status_8" wx:if="{{item.status == 8}}">进行中</view>
    </view>
     <view class="text">
       <view class="content">{{item.content}}</view>
@@ -17,5 +16,7 @@
   </view>
 </view>
   <view class="hr2"></view>
+     </navigator>
+
 </block>
 </view>
