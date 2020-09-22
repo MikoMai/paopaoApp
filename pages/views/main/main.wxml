@@ -17,7 +17,7 @@
 	<!--跑马灯-->
 	<view class="main">
 		<view class="do-view" style="--color--:#009999" bindtap="toPaoPao"><text class="do-view-text">同城跑跑</text></view>
-		<view class="do-view" style="--color--:#00CCCC"><text class="do-view-text">我的跑跑</text></view>
+		<view class="do-view" style="--color--:#00CCCC" bindtap="toMine"><text class="do-view-text">我的跑跑</text></view>
 		<view class="do-view" style="--color--:#6699CC"><text class="do-view-text">精彩资讯</text></view>
 		<view class="do-view" style="--color--:#66CC99"><text class="do-view-text">个人中心</text></view>
 	</view>

@@ -8,7 +8,8 @@ Page({
    */
   data: {
     app:getApp(),
-    mission:{title:'',content:"",integral:0,phone:""}
+    mission:{title:'',content:"",integral:0,phone:""},
+    showButton:1
   },
 
   /**
@@ -16,6 +17,9 @@ Page({
    */
   onLoad: function (options) {
     let that=this;
+    that.setData( { 
+      showButton:options.show
+    }); 
     wx.request( { 
      url: this.data.app.globalData.requestUrl+"/mission/getMission", 
      header: { 

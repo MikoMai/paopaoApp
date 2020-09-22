@@ -5,7 +5,8 @@
     "pages/view",
     "pages/views/main/main",
     "pages/views/paopao/paopao",
-    "pages/views/paopao/detail"
+    "pages/views/paopao/detail",
+    "pages/views/mine/mine"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -9,4 +9,4 @@
     <text class='label'>内容</text>
     <text class='content'>{{mission.content}}</text>
   </view>
- <view class="buttton">  <button type="primary" bindtap="takeMission" data-value="{{mission}}">接任务</button></view>
+ <view class="buttton" wx:if="{{showButton==1}}">  <button type="primary" bindtap="takeMission" data-value="{{mission}}">接任务</button></view>
