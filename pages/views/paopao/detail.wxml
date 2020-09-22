@@ -1,7 +1,12 @@
  <view class='meta'>
     <text class='title'>{{mission.title}}</text>
   </view>
+  <view class="item1">
+   <view class="phone">联系电话:{{mission.phone}}</view>
+     <view class="date">创建时间:{{mission.createDate}}</view>
+   </view>
   <view class='summary'>
     <text class='label'>内容</text>
     <text class='content'>{{mission.content}}</text>
   </view>
+ <view class="buttton">  <button type="primary" bindtap="takeMission" data-value="{{mission}}">接任务</button></view>

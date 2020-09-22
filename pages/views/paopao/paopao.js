@@ -76,8 +76,7 @@ Page({
     };
     let that=this;
     wx.request( { 
-    
-     url: this.data.app.globalData.requestUrl+"/mission/getMissionPage", 
+     url: this.data.app.globalData.requestUrl+"/mission/getMissionPage2", 
      header: { 
       "Content-Type": "application/x-www-form-urlencoded"
      }, 
