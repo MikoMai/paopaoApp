@@ -1,0 +1,21 @@
+<!--pages/views/paopao/paopao.wxml-->
+<view class="list">
+<template is="item" data="{{array}}" />
+<block wx:for="{{array}}"  wx:key="id">
+ <navigator url='/pages/views/news/detail?id={{item.id}}'>
+  <view class="item" >
+  <view class="desc">
+  <view class="item1">
+   <view class="title">{{item.title}}</view>
+   </view>
+    <view class="text">
+      <view class="content">{{item.content}}</view>
+      <view class="createDate">{{item.createDate}}</view>
+    </view>
+  </view>
+</view>
+  <view class="hr2"></view>
+     </navigator>
+
+</block>
+</view>

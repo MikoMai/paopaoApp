@@ -1,0 +1,10 @@
+ <view class='meta'>
+    <text class='title'>{{news.title}}</text>
+  </view>
+  <view class="item1">
+     <view class="date">创建时间:{{news.createDate}}</view>
+   </view>
+  <view class='summary'>
+    <text class='label'>内容</text>
+    <text class='content'>{{news.content}}</text>
+  </view>

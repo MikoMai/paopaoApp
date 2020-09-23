@@ -8,10 +8,9 @@ Page({
    */
   data: {
     app:getApp(),
-    mission:{title:'',content:"",integral:0,phone:""},
+    news:{title:'',content:""},
     showButton:1,
     finishButton:0,
-    userInfo:""
   },
 
   /**
@@ -20,22 +19,20 @@ Page({
   onLoad: function (options) {
     let that=this;
     that.setData( { 
-       userInfo:wx.getStorageSync("userInfo")
+     
     }); 
     wx.request( { 
-     url: this.data.app.globalData.requestUrl+"/mission/getMission", 
+     url: this.data.app.globalData.requestUrl+"/news/getNews", 
      header: { 
       "Content-Type": "application/x-www-form-urlencoded"
      }, 
      method: "get", 
      //data: { cityname: "上海", key: "1430ec127e097e1113259c5e1be1ba70" }, 
-     data:{missionId:options.id} , 
+     data:{id:options.id} , 
      complete: function( res ) { 
        console.log(res);
       that.setData( { 
-        mission:res.data.data,
-        showButton:options.show,
-        finishButton:res.data.data.missionStatus!=3?options.finish:0
+        news:res.data.data
       }); 
       if( res == null || res.data == null ) { 
        console.error( '网络请求失败' ); 
@@ -96,14 +93,14 @@ Page({
   },
 
   takeMission:function(e){
-    let that=this;
 wx.request( { 
   url: this.data.app.globalData.requestUrl+"/mission/takeMission", 
   header: { 
    "Content-Type": "application/x-www-form-urlencoded"
   }, 
   method: "get", 
-  data:{userId:that.data.userInfo.id,missionId:e.target.dataset.value.id} , 
+  //data: { cityname: "上海", key: "1430ec127e097e1113259c5e1be1ba70" }, 
+  data:{userId:app.globalData.userInfo.id,missionId:e.target.dataset.value.id} , 
   complete: function( res ) { 
     if (res.data.code == 200) {
        wx.showToast({ 
@@ -111,9 +108,10 @@ wx.request( {
          icon: 'none', 
          duration: 2000 
          }) 
-        wx.navigateBack({
-          delta: 1
-        })
+
+        wx.navigateTo({ //保留当前页面，跳转到应用内的某个页面（最多打开5个页面，之后按钮就没有响应的）
+      url: "/pages/views/paopao/paopao"
+    })
     }
    if( res == null || res.data == null ) { 
     console.error( '网络请求失败' ); 
@@ -129,6 +127,7 @@ wx.request( {
        "Content-Type": "application/x-www-form-urlencoded"
       }, 
       method: "get", 
+      //data: { cityname: "上海", key: "1430ec127e097e1113259c5e1be1ba70" }, 
       data:{missionStatus:3,missionId:e.target.dataset.value.id} , 
       complete: function( res ) { 
         if (res.data.code == 200) {
@@ -137,9 +136,6 @@ wx.request( {
              icon: 'none', 
              duration: 2000 
              }) 
-            wx.navigateBack({
-              delta: 1
-            })
         }
        if( res == null || res.data == null ) { 
         console.error( '网络请求失败' ); 

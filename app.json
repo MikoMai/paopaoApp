@@ -6,7 +6,12 @@
     "pages/views/main/main",
     "pages/views/paopao/paopao",
     "pages/views/paopao/detail",
-    "pages/views/mine/mine"
+    "pages/views/mine/mine",
+    "pages/views/news/news",
+    "pages/views/news/detail",
+    "pages/views/user/user",
+    "pages/views/user/info",
+    "pages/views/user/password"
   ],
   "window": {
     "backgroundTextStyle": "light",

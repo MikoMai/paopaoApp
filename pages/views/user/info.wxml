@@ -1,0 +1,27 @@
+
+<view class='content'>
+    <view class='item'>
+      <text class='left'>姓名：</text><text class='right'>{{myinfo.name}}</text>
+    </view>
+      <view class='item'>
+      <text class='left'>性别: </text><text class='right'>{{myinfo.sex==0?"女":"男"}}</text>
+    </view>
+    <view class='item'>
+      <text class='left'>电话: </text><text class='right'>{{myinfo.phone}}</text>
+    </view>
+ 
+   <picker mode="date" value="{{date}}" start="1945-09-01" end="2021-09-01" bindchange="bindDateChange">
+   <view class='item'>
+      <text class='left'>生日: </text><text class='right'>{{date}}</text>
+    </view>
+  </picker>
+    <view class='item'>
+      <text class='left'>积分：</text> <text class='right'>{{myinfo.integral}}</text>
+    </view>
+    <view class='item' bindtap='resetpwd'>
+     <text class='left'> 密码：</text><text class='right'>修改密码</text>
+    </view>
+   
+
+     <button type="warn" bindtap='exit'>退出登录</button>
+</view>

@@ -17,16 +17,19 @@ Page({
     })
   },
   onLoad: function () {
-    console.log(app.globalData.userInfo)
-    if (app.globalData.userInfo) {
+    let userInfo=wx.getStorageSync("userInfo")
+    console.log(userInfo)
+    app.globalData.userInfo = userInfo;
+    if (userInfo.id) {
       this.setData({
-        userInfo: app.globalData.userInfo,
+        userInfo: userInfo,
         hasUserInfo: true
       })
       wx.navigateTo({ //保留当前页面，跳转到应用内的某个页面（最多打开5个页面，之后按钮就没有响应的）
         url: "/pages/views/main/main"
       })
-    }
+    }   
+   
   },
   // 获取输入账号 
   accountInput: function (e) {
@@ -69,6 +72,7 @@ Page({
               userInfo: res.data.data,
               hasUserInfo: true
             });
+            wx.setStorageSync("userInfo",res.data.data);
             wx.navigateTo({ //保留当前页面，跳转到应用内的某个页面（最多打开5个页面，之后按钮就没有响应的）
               url: "/pages/views/main/main"
             })

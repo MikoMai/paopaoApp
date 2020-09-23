@@ -1,4 +1,4 @@
-// pages/views/paopao/paopao.js
+// pages/views/news/news.js
 Page({
 
   /**
@@ -16,6 +16,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.iniData();
   },
 
   /**
@@ -29,7 +30,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.iniData();
+
   },
 
   /**
@@ -66,7 +67,6 @@ Page({
   onShareAppMessage: function () {
 
   },
-
   iniData:function(){
     let para = {
       page: 1,
@@ -75,7 +75,7 @@ Page({
     };
     let that=this;
     wx.request( { 
-     url: this.data.app.globalData.requestUrl+"/mission/getMissionPage2", 
+     url: this.data.app.globalData.requestUrl+"/news/getNewsPage", 
      header: { 
       "Content-Type": "application/x-www-form-urlencoded"
      }, 
@@ -94,10 +94,4 @@ Page({
      } 
     }) 
   },
-  seeDetail(event){
-     console.log(event); 
-    // wx.navigateTo({ //保留当前页面，跳转到应用内的某个页面（最多打开5个页面，之后按钮就没有响应的）
-    //   url: "/pages/views/paopao/detail?id"
-    // })
-  }
 })
