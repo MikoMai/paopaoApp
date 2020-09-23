@@ -1,0 +1,21 @@
+<!--pages/views/paopao/paopao.wxml-->
+<view class="list">
+<template is="item" data="{{array}}" />
+<block wx:for="{{array}}"  wx:key="id">
+  <view class="item" >
+  <view class="desc">
+  <view class="item1">
+   <view class="title">{{item.name}}</view>
+     <view class="integral">积分:{{item.integral}}</view>
+   </view>
+    <view class="text">
+      <view class="content">{{item.content}}</view>
+          <view class="createDate">库存: {{item.num}}</view>
+    </view>
+     <view class="buttton" >  <button type="primary" bindtap="takeGift" data-value="{{item}}" disabled=' {{item.num>0?true:false}}'>兑换</button></view>
+  </view>
+</view>
+  <view class="hr2"></view>
+
+</block>
+</view>

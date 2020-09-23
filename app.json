@@ -11,7 +11,9 @@
     "pages/views/news/detail",
     "pages/views/user/user",
     "pages/views/user/info",
-    "pages/views/user/password"
+    "pages/views/user/password",
+    "pages/views/user/gift",
+    "pages/views/user/notice"
   ],
   "window": {
     "backgroundTextStyle": "light",

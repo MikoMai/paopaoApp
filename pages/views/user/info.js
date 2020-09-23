@@ -17,10 +17,31 @@ Page({
    */
   onLoad: function (options) {
     let userInfo=wx.getStorageSync("userInfo");
-    this.setData({
-      myinfo:userInfo,
-      date: userInfo.birthday
-    })
+    let that=this;
+    wx.request( { 
+      url: app.globalData.requestUrl+"/user/getUser", 
+      header: { 
+       "Content-Type": "application/x-www-form-urlencoded"
+      }, 
+      method: "get", 
+      data:{userId:userInfo.id} , 
+      complete: function( res ) { 
+        console.log(res)
+       if( res == null || res.data == null ) { 
+        wx.showToast({
+          title: '请求失败',
+          icon: 'none',
+          duration: 1000
+        })
+         return; 
+        } 
+        that.setData({
+          myinfo:res.data.data,
+          date: userInfo.birthday
+        })
+      } 
+     }) 
+   
   },
   exit:function(e){
     wx.showModal({

@@ -96,7 +96,6 @@ Page({
       "Content-Type": "application/x-www-form-urlencoded"
      }, 
      method: "get", 
-     //data: { cityname: "上海", key: "1430ec127e097e1113259c5e1be1ba70" }, 
      data:para , 
      complete: function( res ) { 
        console.log(res)
@@ -104,7 +103,11 @@ Page({
         array:res.data.data
       }); 
       if( res == null || res.data == null ) { 
-       console.error( '网络请求失败' ); 
+        wx.showToast({
+          title: '请求失败',
+          icon: 'none',
+          duration: 1000
+        })
        return; 
       } 
      } 

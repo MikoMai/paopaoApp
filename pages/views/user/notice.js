@@ -1,23 +1,18 @@
-// pages/views/user/user.js
+const app=getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    menuitems: [
-      { text: '个人资料', url: 'info' },
-      { text: '积分兑换', url: 'gift' },
-      { text: '消息', url: 'notice' }
-    ]
-
+    array:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+this.iniData();
   },
 
   /**
@@ -67,5 +62,34 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  iniData:function(){
+    let para = {
+      page: 1,
+      pageSize:999
+    };
+    let that=this;
+    wx.request( { 
+     url: app.globalData.requestUrl+"/notice/getNoticePage", 
+     header: { 
+      "Content-Type": "application/x-www-form-urlencoded"
+     }, 
+     method: "get",
+     data:para , 
+     complete: function( res ) { 
+       console.log(res)
+      that.setData( { 
+        array:res.data.data.content
+      }); 
+      if( res == null || res.data == null ) { 
+        wx.showToast({
+          title: '请求失败',
+          icon: 'none',
+          duration: 1000
+        })
+       return; 
+      } 
+     } 
+    }) 
+  },
 })

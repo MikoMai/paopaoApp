@@ -1,0 +1,18 @@
+<!--pages/views/paopao/paopao.wxml-->
+<view class="list">
+<template is="item" data="{{array}}" />
+<block wx:for="{{array}}"  wx:key="id">
+  <view class="item" >
+  <view class="desc">
+  <view class="item1">
+   <view class="title">{{item.type=="MISSION"?"任务":item.type=="GIFT"?"礼物":"其它"}}</view>
+      <view class="createDate">{{item.createDate}}</view>
+   </view>
+    <view class="text">
+      <view class="content">{{item.content}}</view>
+    </view>
+  </view>
+</view>
+  <view class="hr2"></view>
+</block>
+</view>
