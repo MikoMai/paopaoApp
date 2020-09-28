@@ -13,7 +13,9 @@
     "pages/views/user/info",
     "pages/views/user/password",
     "pages/views/user/gift",
-    "pages/views/user/notice"
+    "pages/views/user/notice",
+    "pages/index/register",
+    "pages/views/user/newMission"
   ],
   "window": {
     "backgroundTextStyle": "light",

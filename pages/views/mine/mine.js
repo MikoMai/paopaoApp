@@ -12,7 +12,7 @@ Page({
     winHeight: 0,
     currentTab: 0,
     array:[],
-    userInfo:wx.getStorageSync("userInfo")
+   
 
   },
 
@@ -86,9 +86,10 @@ Page({
   },
 
   iniData:function(){
+    let userInfo=wx.getStorageSync("userInfo")
     let that=this;
     let para = {
-      userId: that.data.userInfo.id,
+      userId:userInfo.id,
     };
     wx.request( { 
      url: app.globalData.requestUrl+"/mission/getAllMissionByFinishUser", 
@@ -134,10 +135,10 @@ Page({
 },
 
 bindChange: function( e ) {
-
+  let userInfo=wx.getStorageSync("userInfo")
     var that = this;
     let para = {
-      userId: that.data.userInfo.id,
+      userId:userInfo.id,
     };
     if(e.detail.current==0){
     wx.request( { 
@@ -146,7 +147,6 @@ bindChange: function( e ) {
       "Content-Type": "application/x-www-form-urlencoded"
      }, 
      method: "get", 
-     //data: { cityname: "上海", key: "1430ec127e097e1113259c5e1be1ba70" }, 
      data:para , 
      complete: function( res ) { 
        console.log(res)

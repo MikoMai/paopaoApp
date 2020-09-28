@@ -12,7 +12,9 @@
  <label class="loginLab">密码</label> 
  <input class="inputText" password="true" placeholder="请输入密码" bindinput="passwordInput" /> 
  </view> 
-  
+   <view class="txt-area">
+                <navigator redirect url="register"><text class="register">注册账号</text></navigator> 
+   </view>
  <!--按钮-->
  <view class="loginBtnView"> 
  <button class="loginBtn" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="login">登录</button> 

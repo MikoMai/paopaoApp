@@ -6,6 +6,7 @@ Page({
    */
   data: {
     menuitems: [
+      { text: '新建任务', url: 'newMission' },
       { text: '个人资料', url: 'info' },
       { text: '积分兑换', url: 'gift' },
       { text: '消息', url: 'notice' }

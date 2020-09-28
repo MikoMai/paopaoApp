@@ -1,0 +1,17 @@
+
+<text>标题:</text>
+ <view class="weui-cell weui-cell_input">
+        <input class="weui-input" auto-focus placeholder="请输入标题"  bindinput="titleInput" />
+      </view>
+
+<text>任务积分:</text>
+ <view class="weui-cell weui-cell_input">
+        <input class="weui-input" auto-focus placeholder="任务积分"  bindinput="integralInput" />
+      </view>
+<view class="section">
+<text>内容:</text>
+  <textarea  class="textArea" maxlength="-1" placeholder="请输入任务内容"   bindinput="contentInput" />
+</view>
+
+
+    <button form-type="submit" bindtap="save"> 提交 </button>

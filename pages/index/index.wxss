@@ -72,3 +72,14 @@ page{
   width: 80%; 
   margin-top: 35px; 
  }
+
+ .register{
+  font-size: 12px;
+  color: #cccccc;
+  width: 50%;
+  text-align: right;
+  float: right;
+}
+.txt-area{
+ width: auto;
+}

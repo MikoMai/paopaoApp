@@ -1,0 +1,74 @@
+<view>
+  <view class="titleCss">
+    <text class="titleTextCss">{{titleInfo}}</text>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label labelCss">
+              <text class="textCss">用户名:</text>
+            </view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input inputCss" placeholder-class="place-holder" placeholder="请输入用户名"  bindinput="accountInput"/>
+        </view>
+    </view>
+
+     <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label labelCss">
+              <text class="textCss">用户名:</text>
+            </view>
+        </view>
+        <view class="weui-cell__bd">
+       <view class="inputbox">
+        <view class="inpbox">
+          <radio-group bindchange="radioChange" class="inp radiogroup">
+            <view class="radiobox" wx:for="{{sexArray}}" wx:key="value">
+              <radio value="{{item.id}}" color="#ff0000" checked="{{item.checked}}"/>
+              <text class="radiotxt">{{item.value}}</text>
+            </view>
+          </radio-group>          
+        </view>
+      </view>
+        </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label labelCss">
+              <text class="textCss">密码:</text>
+            </view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input inputCss" placeholder-class="place-holder" placeholder="请输入密码" password bindinput="passwordInput"/>
+        </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-label labelCss">
+          <text class="textCss">确认密码:</text>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input inputCss" placeholder-class="place-holder" placeholder="请确认密码" password bindinput="passwordCheckInput"/>
+        </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-label labelCss">
+          <text class="textCss">出生日期:</text>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input inputCss" placeholder-class="place-holder" placeholder="请输入出生日期格式YYYY-MM-DD" bindinput="birthdayInput"/>
+        </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-label labelCss">
+          <text class="textCss">手机号:</text>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input inputCss" placeholder-class="place-holder" placeholder="请输入用户手机号" type="number" bindinput="phoneInput"/>
+        </view>
+    </view>
+  </view>
+  <view class="page__bd page__bd_spacing addBnCss">
+      <button class="weui-btn" type="primary" bindtap="register">确定</button>
+  </view>
+</view>
